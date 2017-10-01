@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" template="/layout/main.xhtml">
+	<ui:define name="main">
+		<h2>Datos de Cabecera</h2>
+		<h:form>
+			<ui:include src="/cabecera/verCabecera.xhtml" />
+			<h:panelGrid columns="1">
+				<h:dataTable value="#{cabeceraBean.cabecera.detalles}" var="detalle">
+					<h:column>
+						<f:facet name="header">Detalle</f:facet>
+						<h:outputLabel value="#{detalle.descripcion}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Valor</f:facet>
+						<h:outputLabel value="#{detalle.valor}" />
+					</h:column>
+				</h:dataTable>
+			</h:panelGrid>
+			<h:commandButton value="Regresar" action="listadoCabeceras" />
+		</h:form>
+	</ui:define>
+</ui:composition>

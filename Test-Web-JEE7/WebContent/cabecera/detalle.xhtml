@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:panelGrid columns="3">
+		<h:outputLabel value="Detalle:" />
+		<h:inputText id="detalle_descripcion"
+			value="#{cabeceraBean.detalle.descripcion}" required="true" />
+		<h:message for="detalle_descripcion" />
+
+		<h:outputLabel value="Valor:" />
+		<h:inputText id="detalle_valor" value="#{cabeceraBean.detalle.valor}"
+			required="true" />
+		<h:message for="detalle_valor" />
+	</h:panelGrid>
+</ui:composition>

@@ -1,0 +1,15 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" template="/layout/main.xhtml">
+	<ui:define name="main">
+		<h3>#{cabeceraBean.tituloDetalle} detalle</h3>
+		<a href="gestionCabecera.xhtml">Regresar</a>
+		<h:form>
+			<ui:include src="/cabecera/verCabecera.xhtml" />
+			<ui:include src="/cabecera/detalle.xhtml" />
+			<h:commandButton value="#{cabeceraBean.tituloDetalle}"
+				action="#{cabeceraBean.agregarDetalle}" />
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:panelGrid columns="3">
+		<h:outputLabel value="Descripción:" />
+		<h:inputText id="cabecera_desc"
+			value="#{cabeceraBean.cabecera.descripcion}" required="true" />
+		<h:message for="cabecera_desc"></h:message>
+
+		<h:outputLabel value="Fecha:" />
+		<h:outputLabel value="#{cabeceraBean.cabecera.fecha}">
+			<f:convertDateTime pattern="dd-mm-yyyy" />
+		</h:outputLabel>
+		<td />
+
+		<h:outputLabel value="Total:" />
+		<h:outputLabel value="#{cabeceraBean.cabecera.total}" />
+	</h:panelGrid>
+</ui:composition>

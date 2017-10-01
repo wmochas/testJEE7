@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="TestJPA0" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>ec.com.mochas.modelo.Usuario</class>
+		<class>ec.com.mochas.modelo.Cabecera</class>
+		<class>ec.com.mochas.modelo.Detalle</class>
+		<properties>
+			<!--Oracle JDBC connection information <property name="hibernate.connection.driver_class" 
+				value="oracle.jdbc.driver.OracleDriver" /> <property name="hibernate.connection.url" 
+				value="jdbc:oracle:thin:@sri32:1521:DEINTER1" /> -->
+				
+			<!--Sql JDBC connection information -->
+			<property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="hibernate.connection.url" value="jdbc:sqlserver://192.168.239.139:1433;database=test_jee;" />
+			
+			<property name="hibernate.connection.username" value="sa" />
+			<property name="hibernate.connection.password" value="test.1234" />
+			<!--Oracle dialect 
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />-->
+			<!--SQL dialect -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+			
+			<property name="hibernate.archive.autodetection" value="class" />			
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

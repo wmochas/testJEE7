@@ -1,0 +1,27 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:panelGrid columns="1">
+		<h:commandLink value="insertar detalle"
+			action="#{cabeceraBean.insertarDetalle}" />
+		<h:dataTable value="#{cabeceraBean.cabecera.detalles}" var="detalle">
+			<h:column>
+				<f:facet name="header">Detalle</f:facet>
+				<h:outputLabel value="#{detalle.descripcion}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Valor</f:facet>
+				<h:outputLabel value="#{detalle.valor}" />
+			</h:column>
+			<h:column>
+				<h:commandLink value="actualizar"
+					action="#{cabeceraBean.actualizarDetalle(detalle)}" />
+			</h:column>
+			<h:column>
+				<h:commandLink value="borrar"
+					action="#{cabeceraBean.borrarDetalle(detalle)}" />
+			</h:column>
+		</h:dataTable>
+	</h:panelGrid>
+</ui:composition>

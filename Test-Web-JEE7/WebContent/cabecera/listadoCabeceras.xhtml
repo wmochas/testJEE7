@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" template="/layout/main.xhtml">
+	<ui:define name="main">
+		<h3>Listado de cabeceras</h3>
+		<h:form>
+			<h:commandLink action="#{cabeceraBean.crear}" value="Crear Cabecera" />
+			<h:dataTable value="#{listasBean.cabeceras}" var="cabecera">
+				<h:column>
+					<f:facet name="header">
+					Descripcion
+					</f:facet>
+					<h:outputLabel value="#{cabecera.descripcion}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+					Fecha
+					</f:facet>
+					<h:outputLabel value="#{cabecera.fecha}">
+						<f:convertDateTime pattern="d-MM-yyyy" />
+					</h:outputLabel>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+					Total
+					</f:facet>					
+					$ <h:outputLabel value="#{cabecera.total}" />
+				</h:column>
+				<h:column>
+					<h:commandLink value="ver" action="#{cabeceraBean.ver(cabecera)}" />
+				</h:column>
+				<h:column>
+					<h:commandLink value="actualizar"
+						action="#{cabeceraBean.actualizar(cabecera)}" />
+				</h:column>
+				<h:column>
+					<h:commandLink value="borrar"
+						action="#{cabeceraBean.borrar(cabecera)}" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
